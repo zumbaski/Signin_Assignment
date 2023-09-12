@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <style>
+         input {
+        margin: 20px;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        width: 500px;
+
+      }
+      form{
+        text-align: center;
+        background-color: #947fe9;
+      }
+      #submit{
+        background-color: #e9947f;
+        border-radius: 10px;
+        padding: 10px;
+        border-color: #947fe9;
+       }
+       .container{
+        width: 600px;
+        background-color: white;
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 100px;
+       }
+
+     p,a{
+        color: white;
+        text-decoration: none;
+       }
+
+       #submit:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <form action="" >
+      <input type="email" id="email" placeholder="Email" /> <br />
+      <input type="password" id="password" placeholder="Password" /><br />
+      <input type="submit" id="submit" value="Sign In" onclick="signIn()" />
+      <p> Don't Have an account? <a href="signup.html"></a>Sign Up </p>
+    </form>
+</div>
+    <script>
+      function signIn() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let dataBaseEmail = localStorage.getItem("email")
+        let dataBasePassword = localStorage.getItem("password")
+
+       if ((email === dataBaseEmail) && (password=== dataBasePassword)) {
+        alert("Login Successful")
+    
+       }else{
+        alert("Wrong Login Details")
+       }
+
+
+
+      }
+    </script>
+  </body>
+</html>
